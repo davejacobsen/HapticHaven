@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AB92491832C006FB60A /* AppDelegate.swift */; };
+		D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285ABB2491832C006FB60A /* SceneDelegate.swift */; };
+		D5285AC12491832C006FB60A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5285ABF2491832C006FB60A /* Main.storyboard */; };
+		D5285AC32491832D006FB60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5285AC22491832D006FB60A /* Assets.xcassets */; };
+		D5285AC62491832E006FB60A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5285AC42491832E006FB60A /* LaunchScreen.storyboard */; };
+		D5285ACE24918352006FB60A /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285ACD24918352006FB60A /* Haptic.swift */; };
+		D5285AD4249334C2006FB60A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD3249334C2006FB60A /* TestViewController.swift */; };
+		D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD724933511006FB60A /* InfoSheetViewController.swift */; };
+		D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */ = {isa = PBXBuildFile; productRef = D54A37D324BD62A20046FECB /* EMTNeumorphicView */; };
+		D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */; };
+		D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE802494410C00D02B74 /* HapticController.swift */; };
+		D5B6BE85249506CB00D02B74 /* TipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D5285AB62491832C006FB60A /* Haptic Haven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Haven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5285AB92491832C006FB60A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5285ABB2491832C006FB60A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D5285AC02491832C006FB60A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5285AC22491832D006FB60A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5285AC52491832E006FB60A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5285AC72491832E006FB60A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5285ACD24918352006FB60A /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		D5285AD3249334C2006FB60A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D5285AD724933511006FB60A /* InfoSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetViewController.swift; sourceTree = "<group>"; };
+		D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		D5B6BE802494410C00D02B74 /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
+		D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5285AB32491832C006FB60A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5285AAD2491832C006FB60A = {
+			isa = PBXGroup;
+			children = (
+				D5285AB82491832C006FB60A /* Haptic Haven */,
+				D5285AB72491832C006FB60A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5285AB72491832C006FB60A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5285AB62491832C006FB60A /* Haptic Haven.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5285AB82491832C006FB60A /* Haptic Haven */ = {
+			isa = PBXGroup;
+			children = (
+				D5285AD2249183C1006FB60A /* Controllers */,
+				D5285AD1249183B5006FB60A /* Views */,
+				D5285ACF24918382006FB60A /* Models */,
+				D5B6BE7B2494100C00D02B74 /* Helpers */,
+				D5285AD0249183A2006FB60A /* Resources */,
+				D5285AC72491832E006FB60A /* Info.plist */,
+			);
+			path = "Haptic Haven";
+			sourceTree = "<group>";
+		};
+		D5285ACF24918382006FB60A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5285ACD24918352006FB60A /* Haptic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5285AD0249183A2006FB60A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D5285AC22491832D006FB60A /* Assets.xcassets */,
+				D5285AB92491832C006FB60A /* AppDelegate.swift */,
+				D5285ABB2491832C006FB60A /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D5285AD1249183B5006FB60A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5285ABF2491832C006FB60A /* Main.storyboard */,
+				D5285AC42491832E006FB60A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D5285AD2249183C1006FB60A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5B6BE7E249440EE00D02B74 /* Model Controller */,
+				D5B6BE7F249440FA00D02B74 /* View Controller */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5B6BE7B2494100C00D02B74 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D5B6BE7E249440EE00D02B74 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5B6BE802494410C00D02B74 /* HapticController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		D5B6BE7F249440FA00D02B74 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5285AD3249334C2006FB60A /* TestViewController.swift */,
+				D5285AD724933511006FB60A /* InfoSheetViewController.swift */,
+				D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5285AB52491832C006FB60A /* Haptic Haven */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5285ACA2491832E006FB60A /* Build configuration list for PBXNativeTarget "Haptic Haven" */;
+			buildPhases = (
+				D5285AB22491832C006FB60A /* Sources */,
+				D5285AB32491832C006FB60A /* Frameworks */,
+				D5285AB42491832C006FB60A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Haptic Haven";
+			packageProductDependencies = (
+				D54A37D324BD62A20046FECB /* EMTNeumorphicView */,
+			);
+			productName = "Haptic Haven";
+			productReference = D5285AB62491832C006FB60A /* Haptic Haven.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5285AAE2491832C006FB60A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = David;
+				TargetAttributes = {
+					D5285AB52491832C006FB60A = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = D5285AB12491832C006FB60A /* Build configuration list for PBXProject "Haptic Haven" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5285AAD2491832C006FB60A;
+			packageReferences = (
+				D54A37D224BD62A20046FECB /* XCRemoteSwiftPackageReference "EMTNeumorphicView" */,
+			);
+			productRefGroup = D5285AB72491832C006FB60A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5285AB52491832C006FB60A /* Haptic Haven */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5285AB42491832C006FB60A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5285AC62491832E006FB60A /* LaunchScreen.storyboard in Resources */,
+				D5285AC32491832D006FB60A /* Assets.xcassets in Resources */,
+				D5285AC12491832C006FB60A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5285AB22491832C006FB60A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5285ACE24918352006FB60A /* Haptic.swift in Sources */,
+				D5B6BE85249506CB00D02B74 /* TipsTableViewController.swift in Sources */,
+				D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */,
+				D5285AD4249334C2006FB60A /* TestViewController.swift in Sources */,
+				D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */,
+				D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */,
+				D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */,
+				D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D5285ABF2491832C006FB60A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5285AC02491832C006FB60A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5285AC42491832E006FB60A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5285AC52491832E006FB60A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5285AC82491832E006FB60A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5285AC92491832E006FB60A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5285ACB2491832E006FB60A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9U46PJ4YSS;
+				INFOPLIST_FILE = "Haptic Haven/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D5285ACC2491832E006FB60A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9U46PJ4YSS;
+				INFOPLIST_FILE = "Haptic Haven/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5285AB12491832C006FB60A /* Build configuration list for PBXProject "Haptic Haven" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5285AC82491832E006FB60A /* Debug */,
+				D5285AC92491832E006FB60A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5285ACA2491832E006FB60A /* Build configuration list for PBXNativeTarget "Haptic Haven" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5285ACB2491832E006FB60A /* Debug */,
+				D5285ACC2491832E006FB60A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D54A37D224BD62A20046FECB /* XCRemoteSwiftPackageReference "EMTNeumorphicView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hirokimu/EMTNeumorphicView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D54A37D324BD62A20046FECB /* EMTNeumorphicView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D54A37D224BD62A20046FECB /* XCRemoteSwiftPackageReference "EMTNeumorphicView" */;
+			productName = EMTNeumorphicView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D5285AAE2491832C006FB60A /* Project object */;
+}
