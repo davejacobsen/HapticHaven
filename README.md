@@ -3,13 +3,13 @@ Open source code for an app on the App Store called Haptic Haven, an app for iOS
 
 **Features:**
 
--Demo all haptic feedback on one screen to easily compare them
+- Demo all haptic feedback on one screen to easily compare them
 
--See descriptions and use cases for all 9 types built into Swift
+- See descriptions and use cases for all 9 types built into Swift
 
--Share the code with yourself through Messages or email
+- Share the code with yourself through Messages or email
 
--View helpful links with further information about haptic feedback 
+- View helpful links with further information about haptic feedback 
 
 **App Screenshots**
 
