@@ -13,10 +13,11 @@ Demo all haptic feedback on one screen to easily compare them
 
 **App Screenshots**
 
+<img src="Screenshots/Screenshots.png">
 
-Links:
+**Links:**
 
-[App Store Link](https://apps.apple.com/us/app/id1523772947)
+[Haptic Haven in the App Store](https://apps.apple.com/us/app/id1523772947)
 
 [3rd party library for neumorphic design](https://github.com/hirokimu/EMTNeumorphicView)
 
