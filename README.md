@@ -25,5 +25,10 @@ Open source code for an app on the App Store called Haptic Haven, an app for iOS
 
 Make sure to have haptic feedback turned on in your phone's Settings app: Go to Settings > Sound & Haptics > System Haptics.
 
-Feel free to contribute! 
 
+**Feel free to contribute!**
+
+
+Thank you for the overwhelmingly positive support for this project and helping it reach #14 on the top charts for the developer tools category at its peak!
+
+<img src="Screenshots/14.jpg" width="250">
