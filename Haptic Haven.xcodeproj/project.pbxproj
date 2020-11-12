@@ -13,12 +13,13 @@
 		D5285AC32491832D006FB60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5285AC22491832D006FB60A /* Assets.xcassets */; };
 		D5285AC62491832E006FB60A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5285AC42491832E006FB60A /* LaunchScreen.storyboard */; };
 		D5285ACE24918352006FB60A /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285ACD24918352006FB60A /* Haptic.swift */; };
-		D5285AD4249334C2006FB60A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD3249334C2006FB60A /* TestViewController.swift */; };
+		D5285AD4249334C2006FB60A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD3249334C2006FB60A /* PlayViewController.swift */; };
 		D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD724933511006FB60A /* InfoSheetViewController.swift */; };
+		D538E1C625572D3600DC90F6 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */; };
 		D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */ = {isa = PBXBuildFile; productRef = D54A37D324BD62A20046FECB /* EMTNeumorphicView */; };
 		D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */; };
 		D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE802494410C00D02B74 /* HapticController.swift */; };
-		D5B6BE85249506CB00D02B74 /* TipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */; };
+		D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +31,12 @@
 		D5285AC52491832E006FB60A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5285AC72491832E006FB60A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5285ACD24918352006FB60A /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
-		D5285AD3249334C2006FB60A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D5285AD3249334C2006FB60A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D5285AD724933511006FB60A /* InfoSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetViewController.swift; sourceTree = "<group>"; };
+		D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D5B6BE802494410C00D02B74 /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
-		D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewController.swift; sourceTree = "<group>"; };
+		D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */,
+				D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -133,9 +136,9 @@
 		D5B6BE7F249440FA00D02B74 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D5285AD3249334C2006FB60A /* TestViewController.swift */,
+				D5285AD3249334C2006FB60A /* PlayViewController.swift */,
 				D5285AD724933511006FB60A /* InfoSheetViewController.swift */,
-				D5B6BE84249506CB00D02B74 /* TipsTableViewController.swift */,
+				D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -218,11 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5285ACE24918352006FB60A /* Haptic.swift in Sources */,
-				D5B6BE85249506CB00D02B74 /* TipsTableViewController.swift in Sources */,
+				D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */,
 				D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */,
-				D5285AD4249334C2006FB60A /* TestViewController.swift in Sources */,
+				D5285AD4249334C2006FB60A /* PlayViewController.swift in Sources */,
 				D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */,
 				D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */,
+				D538E1C625572D3600DC90F6 /* UIApplicationExtension.swift in Sources */,
 				D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */,
 				D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */,
 			);
@@ -369,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9U46PJ4YSS;
 				INFOPLIST_FILE = "Haptic Haven/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -376,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -389,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9U46PJ4YSS;
 				INFOPLIST_FILE = "Haptic Haven/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -396,7 +402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
