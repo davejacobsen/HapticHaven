@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import StoreKit
 import EMTNeumorphicView
+import CoreHaptics
 
 class PlayViewController: UIViewController {
     
@@ -20,8 +21,10 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet var titleLabels: [UILabel]!
     
-    var tapCount = 0
-    let rateAlertTriggerCount = 80
+    /// An in app rating promt will attempt to fire at each int in this array
+    let rateAlertTapCountArray = [175,275,400,600,1000,1500,3000]
+    
+    /// Used for all elements except play buttons
     let generalCornerRadius: CGFloat = 10
     
     override func viewDidLoad() {
@@ -31,6 +34,7 @@ class PlayViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = UIColor.clear
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,7 @@ class PlayViewController: UIViewController {
         setupViews()
     }
     
+    /// Makes sure that the appearance type selected in the menu is consistent across views
     func setAppearance() {
         let defaults = UserDefaults.standard
         let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
@@ -52,6 +57,7 @@ class PlayViewController: UIViewController {
         }
     }
     
+    /// Makes sure that app is synced with device's dark mode schedule
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setAppearance()
         setupViews()
@@ -63,7 +69,7 @@ class PlayViewController: UIViewController {
         let darkModeColor = CGColor(red: 34/255, green: 34/255, blue: 36/255, alpha: 1)
         let fontColorLightMode = UIColor.darkGray.cgColor
         let fontColorDarkMode = CGColor(red: 185/255, green: 185/255, blue: 190/255, alpha: 1)
-
+        
         let darkModeBlackShadowOppacity: Float = 0.8
         let darkModeWhiteShadowOppacity: Float = 0.15
         let lightModeBlackShadowOppacity: Float = 0.3
@@ -77,6 +83,7 @@ class PlayViewController: UIViewController {
         let defaults = UserDefaults.standard
         let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
         
+        /// Usually it's not this complicated to sync appearance styles, but the Swift package I used for the neumorphic look, this was the best solution I could find
         switch appearanceSelection {
         case 0:
             if traitCollection.userInterfaceStyle.rawValue == 1 {
@@ -158,106 +165,88 @@ class PlayViewController: UIViewController {
     // MARK: - PLAY BUTTONS
     
     @IBAction func lightImpactButtonTapped(_ sender: UIButton) {
-        HapticController.playLightImpact()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playLightImpact()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func mediumImpactButtonTapped(_ sender: UIButton) {
-        HapticController.playMediumImpact()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playMediumImpact()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func heavyImpactButtonTapped(_ sender: UIButton) {
-        HapticController.playHeavyImpact()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playHeavyImpact()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func rigidImpactButtonTapped(_ sender: UIButton) {
-        HapticController.playRigidImpact()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playRigidImpact()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func softImpactButtonTapped(_ sender: UIButton) {
-        HapticController.playSoftImpact()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playSoftImpact()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func successNotificationButtonTapped(_ sender: UIButton) {
-        HapticController.playSuccessNotification()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playSuccessNotification()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func errorNotificationButtonTapped(_ sender: UIButton) {
-        HapticController.playErrorNotification()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playErrorNotification()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func warningNotificationButtonTapped(_ sender: UIButton) {
-        HapticController.playWarningNotification()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playWarningNotification()
+        incrementTapCountForRatingPrompt()
     }
     
     @IBAction func selectionChangedButtonTapped(_ sender: UIButton) {
-        HapticController.playSelectionChangedNotification()
-        incrementTapCount()
         sender.pulsate()
+        HapticController.playSelectionChangedNotification()
+        incrementTapCountForRatingPrompt()
     }
     
-    func incrementTapCount() {
+    func incrementTapCountForRatingPrompt() {
         
         let defaults = UserDefaults.standard
-        let presentedRatePrompt = defaults.bool(forKey: "presentedRatePrompt")
-        
-        guard presentedRatePrompt == false else { return }
-        
+        var tapCount = defaults.integer(forKey: "tapCount")
         tapCount += 1
-        if tapCount == rateAlertTriggerCount {
-            presentRateAlert()
-            defaults.set(true, forKey: "presentedRatePrompt")
+        defaults.setValue(tapCount, forKey: "tapCount")
+        
+        if rateAlertTapCountArray.contains(tapCount) {
+            
+            guard let scene = view.window?.windowScene else {
+                print("no scene")
+                return
+            }
+            if #available(iOS 14.0, *) {
+                SKStoreReviewController.requestReview(in: scene)
+            }
         }
     }
     
-    func presentRateAlert() {
+    /// Unused for now
+    func presentDeviceIncompatibleAlert() {
         
-        let defaults = UserDefaults.standard
-        let presentedRatePrompt = defaults.bool(forKey: "presentedRatePrompt")
-        guard presentedRatePrompt == false else { return }
-        
-        let title = "Enjoying Haptic Haven?"
-        let message = "\nIf you have found this app useful, consider taking a moment to rate it. This helps keep the app free and without ads.\n\nThis is the only time you'll ever be asked. Thank you!"
-        let actionTitle = "I have 2 seconds"
-        let dismiss = "Not now"
+        let title = "Oh no! :("
+        let message = "Your device does not have a haptic engine built in and is not compatible with haptic feedback.\n\nYou are free to explore the app but hitting a play button will not result in any vibrations."
+        let actionTitle = "OK"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: actionTitle, style: .cancel, handler: { (_) in
-            self.rateApp()
-        }))
-        alert.addAction(UIAlertAction(title: dismiss, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func rateApp() {
-        
-        guard let scene = view.window?.windowScene else {
-            print("no scene")
-            return
-        }
-        
-        if #available(iOS 14.0, *) {
-            SKStoreReviewController.requestReview(in: scene)
-        } else if let url = URL(string: "itms-apps://apple.com/app/id1523772947") {
-            UIApplication.shared.open(url)
-        } else {
-            print("error with app rating")
-        }
     }
     
     // MARK: - SHARE BUTTONS

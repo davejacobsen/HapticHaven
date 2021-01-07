@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D507ACB725A405900064861D /* IconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507ACB625A405900064861D /* IconTableViewController.swift */; };
+		D507ACBA25A405A10064861D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507ACB925A405A10064861D /* Icon.swift */; };
+		D507ACC325A407A00064861D /* defaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D507ACBE25A4079F0064861D /* defaultIcon.png */; };
+		D507ACCE25A412F60064861D /* altIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = D507ACCA25A412F60064861D /* altIcon3.png */; };
+		D507ACCF25A412F60064861D /* altIcon4.png in Resources */ = {isa = PBXBuildFile; fileRef = D507ACCB25A412F60064861D /* altIcon4.png */; };
+		D507ACD025A412F60064861D /* altIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D507ACCC25A412F60064861D /* altIcon2.png */; };
+		D507ACD125A412F60064861D /* altIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = D507ACCD25A412F60064861D /* altIcon1.png */; };
 		D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AB92491832C006FB60A /* AppDelegate.swift */; };
 		D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285ABB2491832C006FB60A /* SceneDelegate.swift */; };
 		D5285AC12491832C006FB60A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5285ABF2491832C006FB60A /* Main.storyboard */; };
@@ -23,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D507ACB625A405900064861D /* IconTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewController.swift; sourceTree = "<group>"; };
+		D507ACB925A405A10064861D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		D507ACBE25A4079F0064861D /* defaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultIcon.png; sourceTree = "<group>"; };
+		D507ACCA25A412F60064861D /* altIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altIcon3.png; sourceTree = "<group>"; };
+		D507ACCB25A412F60064861D /* altIcon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altIcon4.png; sourceTree = "<group>"; };
+		D507ACCC25A412F60064861D /* altIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altIcon2.png; sourceTree = "<group>"; };
+		D507ACCD25A412F60064861D /* altIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altIcon1.png; sourceTree = "<group>"; };
 		D5285AB62491832C006FB60A /* Haptic Haven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Haven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5285AB92491832C006FB60A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5285ABB2491832C006FB60A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +65,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D507ACBC25A405B00064861D /* Alt Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D507ACCD25A412F60064861D /* altIcon1.png */,
+				D507ACCC25A412F60064861D /* altIcon2.png */,
+				D507ACCA25A412F60064861D /* altIcon3.png */,
+				D507ACCB25A412F60064861D /* altIcon4.png */,
+				D507ACBE25A4079F0064861D /* defaultIcon.png */,
+			);
+			path = "Alt Icons";
+			sourceTree = "<group>";
+		};
 		D5285AAD2491832C006FB60A = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +145,10 @@
 		D5B6BE7B2494100C00D02B74 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D507ACBC25A405B00064861D /* Alt Icons */,
 				D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */,
 				D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */,
+				D507ACB925A405A10064861D /* Icon.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +167,7 @@
 				D5285AD3249334C2006FB60A /* PlayViewController.swift */,
 				D5285AD724933511006FB60A /* InfoSheetViewController.swift */,
 				D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */,
+				D507ACB625A405900064861D /* IconTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -207,7 +236,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D507ACC325A407A00064861D /* defaultIcon.png in Resources */,
+				D507ACCE25A412F60064861D /* altIcon3.png in Resources */,
+				D507ACD125A412F60064861D /* altIcon1.png in Resources */,
 				D5285AC62491832E006FB60A /* LaunchScreen.storyboard in Resources */,
+				D507ACCF25A412F60064861D /* altIcon4.png in Resources */,
+				D507ACD025A412F60064861D /* altIcon2.png in Resources */,
 				D5285AC32491832D006FB60A /* Assets.xcassets in Resources */,
 				D5285AC12491832C006FB60A /* Main.storyboard in Resources */,
 			);
@@ -224,11 +258,13 @@
 				D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */,
 				D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */,
 				D5285AD4249334C2006FB60A /* PlayViewController.swift in Sources */,
+				D507ACB725A405900064861D /* IconTableViewController.swift in Sources */,
 				D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */,
 				D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */,
 				D538E1C625572D3600DC90F6 /* UIApplicationExtension.swift in Sources */,
 				D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */,
 				D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */,
+				D507ACBA25A405A10064861D /* Icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -402,7 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

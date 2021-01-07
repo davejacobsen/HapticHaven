@@ -10,11 +10,15 @@ import UIKit
 import SafariServices
 import StoreKit
 import MessageUI
+import CoreHaptics
 
 class MenuTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var appearanceSegmentedControl: UISegmentedControl!
+    var hapticsAvailable: Bool {
+        CHHapticEngine.capabilitiesForHardware().supportsHaptics
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,13 +107,12 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         /// This compresses the section spacing for screen sizes of the iphone 8(height of 667 points) or smaller
-        let headerHeight1: CGFloat = view.frame.size.height > 667 ? 20 : 10
-        let headerHeight2: CGFloat = view.frame.size.height > 667 ? 30 : 20
+        /// Because I disable scrolling, the version label would get cut off on small screens without this
+        let headerHeight1: CGFloat = view.frame.size.height > 667 ? 20 : 0.1
+        let headerHeight2: CGFloat = view.frame.size.height > 667 ? 30 : 17
         
         if section == 3 {
             return headerHeight1
-        } else if section == 4 {
-            return 0
         } else {
             return headerHeight2
         }
@@ -171,6 +174,18 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
         present(alertController, animated: true, completion: nil)
     }
     
+    /// Unused for now
+    func presentDeviceIncompatibleAlert() {
+        
+        let title = "Oh no! :("
+        let message = "Your device does not have a haptic engine built in and is not compatible with haptic feedback.\n\nYou are free to explore the app but hitting a play button will not result in any vibrations."
+        let actionTitle = "OK"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func launchShareSheet() {
         
         if let appURL = NSURL(string: "https://apps.apple.com/us/app/id1523772947") {
@@ -189,7 +204,7 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
         if let url = URL(string: "itms-apps://apple.com/app/id1523772947") {
             UIApplication.shared.open(url)
         } else {
-            print("error with app store URl")
+            print("error with app store URL")
         }
     }
 }
