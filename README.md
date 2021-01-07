@@ -9,7 +9,9 @@ Open source code for an app on the App Store called Haptic Haven, an app for iOS
 
 - Share the code with yourself through Messages or email
 
-- View helpful links with further information about haptic feedback 
+- View helpful links with further information about haptic feedback
+
+- Fully supports dark mode
 
 **App Screenshots**
 
