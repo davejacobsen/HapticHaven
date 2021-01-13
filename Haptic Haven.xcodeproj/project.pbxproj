@@ -27,6 +27,8 @@
 		D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */; };
 		D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE802494410C00D02B74 /* HapticController.swift */; };
 		D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */; };
+		D5E4E36325AD46B300CB5FE3 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */; };
+		D5E4E36825AE37DE00CB5FE3 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4E36725AE37DE00CB5FE3 /* UIDeviceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D5B6BE802494410C00D02B74 /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
 		D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		D5E4E36725AE37DE00CB5FE3 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 				D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */,
 				D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */,
 				D507ACB925A405A10064861D /* Icon.swift */,
+				D5E4E36725AE37DE00CB5FE3 /* UIDeviceExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				D5285AD724933511006FB60A /* InfoSheetViewController.swift */,
 				D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */,
 				D507ACB625A405900064861D /* IconTableViewController.swift */,
+				D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5285ACE24918352006FB60A /* Haptic.swift in Sources */,
+				D5E4E36825AE37DE00CB5FE3 /* UIDeviceExtension.swift in Sources */,
 				D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */,
 				D5285ABA2491832C006FB60A /* AppDelegate.swift in Sources */,
 				D5285AD4249334C2006FB60A /* PlayViewController.swift in Sources */,
@@ -265,6 +272,7 @@
 				D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */,
 				D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */,
 				D507ACBA25A405A10064861D /* Icon.swift in Sources */,
+				D5E4E36325AD46B300CB5FE3 /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -438,7 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

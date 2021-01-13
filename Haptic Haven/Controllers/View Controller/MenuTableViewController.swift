@@ -16,16 +16,25 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
     
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var appearanceSegmentedControl: UISegmentedControl!
+    
     var hapticsAvailable: Bool {
         CHHapticEngine.capabilitiesForHardware().supportsHaptics
+    }
+    
+    /// returns true for any phone with a screen height greater than or equal to iPhone 11
+    var deviceHasLargeScreen: Bool {
+        view.frame.size.height >= 896
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let appVersion = UIApplication.appVersion {
-            versionLabel.text = "Haptic Haven Version \(appVersion)"
+            versionLabel.text = "Haptic Haven version \(appVersion)"
         }
+        
+        tableView.isScrollEnabled = !deviceHasLargeScreen
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,21 +109,25 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
             tableView.deselectRow(at: indexPath, animated: true)
         case [3,2]: composeFeedbackEmail()
             tableView.deselectRow(at: indexPath, animated: true)
+        case [3,3]: tableView.deselectRow(at: indexPath, animated: true)
         default: print("error with row selection")
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        /// This compresses the section spacing for screen sizes of the iphone 8(height of 667 points) or smaller
-        /// Because I disable scrolling, the version label would get cut off on small screens without this
-        let headerHeight1: CGFloat = view.frame.size.height > 667 ? 20 : 0.1
-        let headerHeight2: CGFloat = view.frame.size.height > 667 ? 30 : 17
-        
-        if section == 3 {
-            return headerHeight1
-        } else {
-            return headerHeight2
+            switch section {
+            case 0: return 17
+            case 1: return 40
+            case 2: return 40
+            case 3: return 30
+            case 4: return 20
+            default: return 0
+    
         }
     }
     
@@ -207,6 +220,18 @@ class MenuTableViewController: UITableViewController, SFSafariViewControllerDele
             print("error with app store URL")
         }
     }
+    
+    @IBAction func twitterHandleTapped(_ sender: Any) {
+        let urlString = "https://twitter.com/davejacobseniOS"
+        
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url)
+            vc.delegate = self
+            
+            present(vc, animated: true)
+        }
+    }
+    
 }
 
 extension MenuTableViewController: MFMailComposeViewControllerDelegate {
@@ -223,10 +248,15 @@ extension MenuTableViewController: MFMailComposeViewControllerDelegate {
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         
         var messageBody: String
+        
+        let deviceModelName = UIDevice.modelName
+        let divider = "-----------------------------"
+        
         if let appVersion = UIApplication.appVersion {
-            messageBody =  "\n\n\n\nVersion: \(appVersion)"
+            
+            messageBody =  "\n\n\n\n\(divider)\nVersion: \(appVersion)\nDevice model: \(deviceModelName)\n\(divider)"
         } else {
-            messageBody = "\n\n"
+            messageBody = "\n\n\n\n\(divider)\nDevice model: \(deviceModelName)\n\(divider)"
         }
         
         let mailComposerVC = MFMailComposeViewController()
