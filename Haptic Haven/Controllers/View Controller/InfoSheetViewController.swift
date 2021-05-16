@@ -20,7 +20,14 @@ class InfoSheetViewController: UIViewController {
     @IBOutlet weak var descriptionView: EMTNeumorphicView!
     @IBOutlet weak var playButton: EMTNeumorphicButton!
     @IBOutlet weak var shareButton: EMTNeumorphicButton!
+    @IBOutlet weak var intensitySlider: UISlider!
+    @IBOutlet weak var intensityLabel: UILabel!
+    @IBOutlet weak var intensityTitleLabel: UILabel!
+    @IBOutlet weak var maxIntensityLabel: UILabel!
+    @IBOutlet weak var minIntensityLabel: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
     
+    /// used for all elements except the play button
     let generalCornerRadius: CGFloat = 10
     public var haptic: Haptic?
     
@@ -30,33 +37,18 @@ class InfoSheetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setAppearance()
+        /// Makes sure that the appearance type selected in the menu is consistent across views
+        overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
         setUpViews()
     }
     
-    func setAppearance() {
-        let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
-        
-        if appearanceSelection == 0 {
-            overrideUserInterfaceStyle = .unspecified
-        } else if appearanceSelection == 1 {
-            overrideUserInterfaceStyle = .light
-        } else {
-            overrideUserInterfaceStyle = .dark
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name("updateNeededForHapticTitles"), object: nil)
     }
     
     func setUpViews() {
-        
-        let lightModeColor = CGColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1)
-        let darkModeColor = CGColor(red: 34/255, green: 34/255, blue: 36/255, alpha: 1)
-        let fontColorLightMode = UIColor.darkGray.cgColor
-        let fontColorDarkMode = CGColor(red: 185/255, green: 185/255, blue: 190/255, alpha: 1)
-        let darkModeBlackShadowOppacity: Float = 0.8
-        let darkModeWhiteShadowOppacity: Float = 0.15
-        let lightModeBlackShadowOppacity: Float = 0.5
-        let lightModeWhiteShadowOppacity: Float = 0.99
         
         let assignedCGColor: CGColor
         let assignedCGFontColor: CGColor
@@ -64,34 +56,34 @@ class InfoSheetViewController: UIViewController {
         let assignedWhiteShadowOppacity: Float
         
         let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
+        let appearanceSelection = defaults.integer(forKey: HapticController.appearanceKey)
         
         switch appearanceSelection {
         case 0:
             if traitCollection.userInterfaceStyle.rawValue == 1 {
-                assignedCGColor = lightModeColor
-                assignedCGFontColor = fontColorLightMode
-                assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-                assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
+                assignedCGColor = HapticController.lightModeColor
+                assignedCGFontColor = HapticController.fontColorLightMode
+                assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+                assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
             } else {
-                assignedCGColor = darkModeColor
-                assignedCGFontColor = fontColorDarkMode
-                assignedBlackShadowOppacity = darkModeBlackShadowOppacity
-                assignedWhiteShadowOppacity = darkModeWhiteShadowOppacity
+                assignedCGColor = HapticController.darkModeColor
+                assignedCGFontColor = HapticController.fontColorDarkMode
+                assignedBlackShadowOppacity = HapticController.darkModeBlackShadowOppacity
+                assignedWhiteShadowOppacity = HapticController.darkModeWhiteShadowOppacity
             }
-        case 1: assignedCGColor = lightModeColor
-            assignedCGFontColor = fontColorLightMode
-            assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
-        case 2: assignedCGColor = darkModeColor
-            assignedCGFontColor = fontColorDarkMode
-            assignedBlackShadowOppacity = darkModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = darkModeWhiteShadowOppacity
+        case 1: assignedCGColor = HapticController.lightModeColor
+            assignedCGFontColor = HapticController.fontColorLightMode
+            assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
+        case 2: assignedCGColor = HapticController.darkModeColor
+            assignedCGFontColor = HapticController.fontColorDarkMode
+            assignedBlackShadowOppacity = HapticController.darkModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.darkModeWhiteShadowOppacity
         default:
-            assignedCGColor = lightModeColor
-            assignedCGFontColor = fontColorLightMode
-            assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
+            assignedCGColor = HapticController.lightModeColor
+            assignedCGFontColor = HapticController.fontColorLightMode
+            assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
             print("error in appearance selection")
         }
         
@@ -115,7 +107,7 @@ class InfoSheetViewController: UIViewController {
         playButton.neumorphicLayer?.borderColor = assignedCGColor
         playButton.neumorphicLayer?.elementBackgroundColor = assignedCGColor
         
-        playButton.neumorphicLayer?.cornerRadius = view.frame.width * 0.06
+        playButton.neumorphicLayer?.cornerRadius = view.frame.width * 0.04
         shareButton.neumorphicLayer?.cornerRadius = generalCornerRadius
         codeView.neumorphicLayer?.cornerRadius = generalCornerRadius
         descriptionView.neumorphicLayer?.cornerRadius = generalCornerRadius
@@ -129,6 +121,11 @@ class InfoSheetViewController: UIViewController {
         shareButton.neumorphicLayer?.borderWidth = 3.0
         
         titleLabel.textColor = UIColor(cgColor: assignedCGFontColor)
+        intensityTitleLabel.textColor = UIColor(cgColor: assignedCGFontColor)
+        intensityLabel.textColor = UIColor(cgColor: assignedCGFontColor)
+        minIntensityLabel.textColor = UIColor(cgColor: assignedCGFontColor)
+        maxIntensityLabel.textColor = UIColor(cgColor: assignedCGFontColor)
+        infoButton.tintColor = UIColor(cgColor: assignedCGFontColor)
         codeLabel.textColor = UIColor(cgColor: assignedCGFontColor)
         codeTitleLabel.textColor = UIColor(cgColor: assignedCGFontColor)
         descriptionLabel.textColor = UIColor(cgColor: assignedCGFontColor)
@@ -139,8 +136,27 @@ class InfoSheetViewController: UIViewController {
         if let haptic = haptic {
             titleLabel.text = haptic.name
             descriptionLabel.text = haptic.description
-            codeLabel.text = haptic.code
+            if let intensity = haptic.intensity {
+                codeLabel.text = "\(haptic.code)\(intensity))"
+                intensitySlider.value = Float(intensity)
+                intensityLabel.text = "\(intensity)"
+            } else {
+                codeLabel.text = haptic.code
+                hideIntensityElements()
+                playButton.translatesAutoresizingMaskIntoConstraints = false
+                playButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 80).isActive = true
+            }
         }
+    }
+    
+    /// called when the assigned haptic has no assigned intensity
+    func hideIntensityElements() {
+        intensitySlider.isHidden = true
+        intensityLabel.isHidden = true
+        intensityTitleLabel.isHidden = true
+        minIntensityLabel.isHidden = true
+        maxIntensityLabel.isHidden = true
+        infoButton.isHidden = true
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -150,6 +166,7 @@ class InfoSheetViewController: UIViewController {
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
         
         if let haptic = haptic {
+            
             switch haptic.name {
             case HapticController.lightImpact.name:
                 HapticController.playLightImpact()
@@ -176,6 +193,53 @@ class InfoSheetViewController: UIViewController {
         sender.pulsate()
     }
     
+    @IBAction func IntensityValueChanged(_ sender: Any) {
+        
+        if let unwrappedHaptic = haptic {
+            
+            guard unwrappedHaptic.intensity != nil else { return }
+            let sliderCGFloatValue = CGFloat(intensitySlider.value)
+            let roundedSliderCGFloatValue = round(100.0 * sliderCGFloatValue) / 100.0
+
+            haptic?.intensity = roundedSliderCGFloatValue
+            
+            switch unwrappedHaptic.name {
+            case HapticController.lightImpact.name:
+                HapticController.lightImpact.intensity = roundedSliderCGFloatValue
+                codeLabel.text = "\(HapticController.lightImpact.code)\(HapticController.lightImpact.intensity!))"
+                intensityLabel.text = "\(HapticController.lightImpact.intensity!)"
+            case HapticController.mediumImpact.name:
+                HapticController.mediumImpact.intensity = roundedSliderCGFloatValue
+                codeLabel.text = "\(HapticController.mediumImpact.code)\(HapticController.mediumImpact.intensity!))"
+                intensityLabel.text = "\(HapticController.mediumImpact.intensity!)"
+            case HapticController.heavyImpact.name:
+                HapticController.heavyImpact.intensity = roundedSliderCGFloatValue
+                codeLabel.text = "\(HapticController.heavyImpact.code)\(HapticController.heavyImpact.intensity!))"
+                intensityLabel.text = "\(HapticController.heavyImpact.intensity!)"
+            case HapticController.softImpact.name:
+                HapticController.softImpact.intensity = roundedSliderCGFloatValue
+                codeLabel.text = "\(HapticController.softImpact.code)\(HapticController.softImpact.intensity!))"
+                intensityLabel.text = "\(HapticController.softImpact.intensity!)"
+            case HapticController.rigidImpact.name:
+                HapticController.rigidImpact.intensity = roundedSliderCGFloatValue
+                codeLabel.text = "\(HapticController.rigidImpact.code)\(HapticController.rigidImpact.intensity!))"
+                intensityLabel.text = "\(HapticController.rigidImpact.intensity!)"
+            default:
+                print("error in setting haptic intensity")
+            }
+        }
+    }
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        
+        let title = "Haptic Intensity"
+        let message = "\nAll 'impact' haptic feedback types have a configurable intensity property which determines the strength of the haptic.\n\nThe default CGFloat value for intensity is 1.0, which is the maximum intensity."
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func shareButtonTapped(_ sender: Any) {
         guard let haptic = haptic else {return}
         launchShareSheet(haptic: haptic)
@@ -183,7 +247,13 @@ class InfoSheetViewController: UIViewController {
     
     func launchShareSheet(haptic: Haptic) {
         
-        let codeString = haptic.code
+        let codeString: String
+        
+        if let intensity = haptic.intensity {
+            codeString = "\(haptic.code)\(intensity))"
+        } else {
+            codeString = haptic.code
+        }
         let objectsToShare: [Any] = [codeString]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         

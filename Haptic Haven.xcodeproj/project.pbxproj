@@ -22,8 +22,11 @@
 		D5285ACE24918352006FB60A /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285ACD24918352006FB60A /* Haptic.swift */; };
 		D5285AD4249334C2006FB60A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD3249334C2006FB60A /* PlayViewController.swift */; };
 		D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285AD724933511006FB60A /* InfoSheetViewController.swift */; };
+		D531791225DE1FD500FEF0B7 /* TipJarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531791125DE1FD500FEF0B7 /* TipJarViewController.swift */; };
+		D531791625DF1DFD00FEF0B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D531791525DF1DFC00FEF0B7 /* StoreKit.framework */; };
 		D538E1C625572D3600DC90F6 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */; };
 		D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */ = {isa = PBXBuildFile; productRef = D54A37D324BD62A20046FECB /* EMTNeumorphicView */; };
+		D58AA9F9264700AB00146943 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D58AA9F8264700AB00146943 /* SwiftyStoreKit */; };
 		D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */; };
 		D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE802494410C00D02B74 /* HapticController.swift */; };
 		D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */; };
@@ -49,6 +52,9 @@
 		D5285ACD24918352006FB60A /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		D5285AD3249334C2006FB60A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D5285AD724933511006FB60A /* InfoSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetViewController.swift; sourceTree = "<group>"; };
+		D531791125DE1FD500FEF0B7 /* TipJarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewController.swift; sourceTree = "<group>"; };
+		D531791525DF1DFC00FEF0B7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D531791725DF3D8200FEF0B7 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D5B6BE802494410C00D02B74 /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
@@ -62,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58AA9F9264700AB00146943 /* SwiftyStoreKit in Frameworks */,
 				D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */,
+				D531791625DF1DFD00FEF0B7 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +94,7 @@
 			children = (
 				D5285AB82491832C006FB60A /* Haptic Haven */,
 				D5285AB72491832C006FB60A /* Products */,
+				D531791425DF1DFC00FEF0B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,9 +155,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D531791425DF1DFC00FEF0B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D531791525DF1DFC00FEF0B7 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5B6BE7B2494100C00D02B74 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D531791725DF3D8200FEF0B7 /* Configuration.storekit */,
 				D507ACBC25A405B00064861D /* Alt Icons */,
 				D5B6BE7C2494103400D02B74 /* UIButtonExtension.swift */,
 				D538E1C525572D3600DC90F6 /* UIApplicationExtension.swift */,
@@ -174,6 +192,7 @@
 				D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */,
 				D507ACB625A405900064861D /* IconTableViewController.swift */,
 				D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */,
+				D531791125DE1FD500FEF0B7 /* TipJarViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -196,6 +215,7 @@
 			name = "Haptic Haven";
 			packageProductDependencies = (
 				D54A37D324BD62A20046FECB /* EMTNeumorphicView */,
+				D58AA9F8264700AB00146943 /* SwiftyStoreKit */,
 			);
 			productName = "Haptic Haven";
 			productReference = D5285AB62491832C006FB60A /* Haptic Haven.app */;
@@ -227,6 +247,7 @@
 			mainGroup = D5285AAD2491832C006FB60A;
 			packageReferences = (
 				D54A37D224BD62A20046FECB /* XCRemoteSwiftPackageReference "EMTNeumorphicView" */,
+				D58AA9F7264700AB00146943 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = D5285AB72491832C006FB60A /* Products */;
 			projectDirPath = "";
@@ -268,6 +289,7 @@
 				D507ACB725A405900064861D /* IconTableViewController.swift in Sources */,
 				D5285AD824933511006FB60A /* InfoSheetViewController.swift in Sources */,
 				D5285ABC2491832C006FB60A /* SceneDelegate.swift in Sources */,
+				D531791225DE1FD500FEF0B7 /* TipJarViewController.swift in Sources */,
 				D538E1C625572D3600DC90F6 /* UIApplicationExtension.swift in Sources */,
 				D5B6BE812494410C00D02B74 /* HapticController.swift in Sources */,
 				D5B6BE7D2494103400D02B74 /* UIButtonExtension.swift in Sources */,
@@ -425,7 +447,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -446,7 +468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -486,6 +508,14 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		D58AA9F7264700AB00146943 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -493,6 +523,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D54A37D224BD62A20046FECB /* XCRemoteSwiftPackageReference "EMTNeumorphicView" */;
 			productName = EMTNeumorphicView;
+		};
+		D58AA9F8264700AB00146943 /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D58AA9F7264700AB00146943 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -11,7 +11,9 @@ import UIKit
 class IconTableViewController: UITableViewController {
     
     var icons = [Icon(image: UIImage(named: "defaultIcon")!, fileName: "AppIcon", isSelectedIcon: false), Icon(image: UIImage(named: "altIcon1")!, fileName: "altIcon1", isSelectedIcon: false), Icon(image: UIImage(named: "altIcon2")!, fileName: "altIcon2", isSelectedIcon: false), Icon(image: UIImage(named: "altIcon3")!, fileName: "altIcon3", isSelectedIcon: false), Icon(image: UIImage(named: "altIcon4")!, fileName: "altIcon4", isSelectedIcon: false)]
-    
+
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isScrollEnabled = false
@@ -19,27 +21,14 @@ class IconTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setAppearance()
+        /// Makes sure that the appearance type selected in the menu is consistent across views
+        overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
         setSelectedAppIcon()
     }
     
     func setSelectedAppIcon() {
-        let defaults = UserDefaults.standard
-        let iconSelection = defaults.integer(forKey: "iconSelection")
+        let iconSelection = defaults.integer(forKey: HapticController.iconSelectionKey)
         icons[iconSelection].isSelectedIcon = true
-    }
-    
-    func setAppearance() {
-        let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
-        
-        if appearanceSelection == 0 {
-            overrideUserInterfaceStyle = .unspecified
-        } else if appearanceSelection == 1 {
-            overrideUserInterfaceStyle = .light
-        } else {
-            overrideUserInterfaceStyle = .dark
-        }
     }
     
     // MARK: - Table view data source
@@ -112,9 +101,7 @@ class IconTableViewController: UITableViewController {
             }
         }
         
-        let defaults = UserDefaults.standard
-        defaults.setValue(indexPath.row, forKey: "iconSelection")
+        defaults.setValue(indexPath.row, forKey: HapticController.iconSelectionKey)
         tableView.reloadData()
     }
-    
 }

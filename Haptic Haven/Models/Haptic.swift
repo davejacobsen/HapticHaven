@@ -6,10 +6,11 @@
 //  Copyright © 2020 David. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Haptic {
     let name: String
     let description: String
     let code: String
+    var intensity: CGFloat?
 }

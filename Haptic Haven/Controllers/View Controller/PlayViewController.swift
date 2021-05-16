@@ -22,7 +22,7 @@ class PlayViewController: UIViewController {
     @IBOutlet var titleLabels: [UILabel]!
     
     /// An in app rating promt will attempt to fire at each int in this array
-    let rateAlertTapCountArray = [175,275,400,600,1000,1500,3000]
+    let rateAlertTapCountArray = [200,325,500,700,1000,1500,3000]
     
     /// Used for all elements except play buttons
     let generalCornerRadius: CGFloat = 10
@@ -35,45 +35,25 @@ class PlayViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = UIColor.clear
         
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(updateHapticTitles), name: Notification.Name("updateNeededForHapticTitles"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setAppearance()
-        setupViews()
-    }
-    
-    /// Makes sure that the appearance type selected in the menu is consistent across views
-    func setAppearance() {
-        let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
         
-        if appearanceSelection == 0 {
-            overrideUserInterfaceStyle = .unspecified
-        } else if appearanceSelection == 1 {
-            overrideUserInterfaceStyle = .light
-        } else {
-            overrideUserInterfaceStyle = .dark
-        }
+        /// Makes sure that the appearance type selected in the menu is consistent across views
+        overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
+        setupViews()
     }
     
     /// Makes sure that app is synced with device's dark mode schedule
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        setAppearance()
+        overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
         setupViews()
     }
     
     func setupViews() {
-        
-        let lightModeColor = CGColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1)
-        let darkModeColor = CGColor(red: 34/255, green: 34/255, blue: 36/255, alpha: 1)
-        let fontColorLightMode = UIColor.darkGray.cgColor
-        let fontColorDarkMode = CGColor(red: 185/255, green: 185/255, blue: 190/255, alpha: 1)
-        
-        let darkModeBlackShadowOppacity: Float = 0.8
-        let darkModeWhiteShadowOppacity: Float = 0.15
-        let lightModeBlackShadowOppacity: Float = 0.3
-        let lightModeWhiteShadowOppacity: Float = 0.99
         
         let assignedCGColor: CGColor
         let assignedCGFontColor: CGColor
@@ -81,35 +61,35 @@ class PlayViewController: UIViewController {
         let assignedWhiteShadowOppacity: Float
         
         let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
+        let appearanceSelection = defaults.integer(forKey: HapticController.appearanceKey)
         
         /// Usually it's not this complicated to sync appearance styles, but the Swift package I used for the neumorphic look, this was the best solution I could find
         switch appearanceSelection {
         case 0:
             if traitCollection.userInterfaceStyle.rawValue == 1 {
-                assignedCGColor = lightModeColor
-                assignedCGFontColor = fontColorLightMode
-                assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-                assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
+                assignedCGColor = HapticController.lightModeColor
+                assignedCGFontColor = HapticController.fontColorLightMode
+                assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+                assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
             } else {
-                assignedCGColor = darkModeColor
-                assignedCGFontColor = fontColorDarkMode
-                assignedBlackShadowOppacity = darkModeBlackShadowOppacity
-                assignedWhiteShadowOppacity = darkModeWhiteShadowOppacity
+                assignedCGColor = HapticController.darkModeColor
+                assignedCGFontColor = HapticController.fontColorDarkMode
+                assignedBlackShadowOppacity = HapticController.darkModeBlackShadowOppacity
+                assignedWhiteShadowOppacity = HapticController.darkModeWhiteShadowOppacity
             }
-        case 1: assignedCGColor = lightModeColor
-            assignedCGFontColor = fontColorLightMode
-            assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
-        case 2: assignedCGColor = darkModeColor
-            assignedCGFontColor = fontColorDarkMode
-            assignedBlackShadowOppacity = darkModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = darkModeWhiteShadowOppacity
+        case 1: assignedCGColor = HapticController.lightModeColor
+            assignedCGFontColor = HapticController.fontColorLightMode
+            assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
+        case 2: assignedCGColor = HapticController.darkModeColor
+            assignedCGFontColor = HapticController.fontColorDarkMode
+            assignedBlackShadowOppacity = HapticController.darkModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.darkModeWhiteShadowOppacity
         default:
-            assignedCGColor = lightModeColor
-            assignedCGFontColor = fontColorLightMode
-            assignedBlackShadowOppacity = lightModeBlackShadowOppacity
-            assignedWhiteShadowOppacity = lightModeWhiteShadowOppacity
+            assignedCGColor = HapticController.lightModeColor
+            assignedCGFontColor = HapticController.fontColorLightMode
+            assignedBlackShadowOppacity = HapticController.lightModeBlackShadowOppacity
+            assignedWhiteShadowOppacity = HapticController.lightModeWhiteShadowOppacity
             print("error in appearance selection")
         }
         
@@ -159,6 +139,20 @@ class PlayViewController: UIViewController {
             shareButton.neumorphicLayer?.lightShadowOpacity = assignedWhiteShadowOppacity
             shareButton.neumorphicLayer?.elementDepth = 6
             shareButton.tintColor = UIColor(cgColor: assignedCGFontColor)
+        }
+    }
+    
+    @objc func updateHapticTitles() {
+        for titleLabel in titleLabels {
+            switch titleLabel.tag {
+            case 1: titleLabel.text = "\(HapticController.lightImpact.name) (\(HapticController.convertToPercent(intensity: HapticController.lightImpact.intensity)))"
+            case 2: titleLabel.text = "\(HapticController.mediumImpact.name) (\(HapticController.convertToPercent(intensity: HapticController.mediumImpact.intensity)))"
+            case 3: titleLabel.text = "\(HapticController.heavyImpact.name) (\(HapticController.convertToPercent(intensity: HapticController.heavyImpact.intensity)))"
+            case 4: titleLabel.text = "\(HapticController.rigidImpact.name) (\(HapticController.convertToPercent(intensity: HapticController.rigidImpact.intensity)))"
+            case 5: titleLabel.text = "\(HapticController.softImpact.name) (\(HapticController.convertToPercent(intensity: HapticController.softImpact.intensity)))"
+            default:
+                assert(titleLabels.isEmpty == false)
+            }
         }
     }
     
@@ -289,7 +283,13 @@ class PlayViewController: UIViewController {
     
     func launchShareSheet(haptic: Haptic) {
         
-        let codeString = haptic.code
+        let codeString: String
+        
+        if let intensity = haptic.intensity {
+            codeString = "\(haptic.code)\(intensity))"
+        } else {
+            codeString = haptic.code
+        }
         
         let objectsToShare: [Any] = [codeString]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)

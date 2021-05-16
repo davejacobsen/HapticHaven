@@ -13,26 +13,24 @@ class AboutTableViewController: UITableViewController, SFSafariViewControllerDel
     
     @IBOutlet weak var portraitImageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setAppearance()
-        
-        portraitImageView.layer.cornerRadius = 6
-        tableView.isScrollEnabled = false
+    let iconURLString = "https://www.flaticon.com/free-icon/tap_929720?k=1610381162362"
+    let swiftyStoreKitURLString = "https://github.com/bizz84/SwiftyStoreKit"
+    let neumorphicViewURLString = "https://github.com/hirokimu/EMTNeumorphicView"
+    let twitterURLString = "https://twitter.com/davejacobseniOS"
+    let youtubeURLString = "https://www.youtube.com/channel/UCpClazC2qqYfAO48NdnBeuQ"
+    
+    /// returns true for any phone with a screen height greater than or equal to iPhone 11
+    var deviceHasLargeScreen: Bool {
+        view.frame.size.height >= 896
     }
     
-    func setAppearance() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /// Makes sure that the appearance type selected in the menu is consistent across views
+        overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
         
-        let defaults = UserDefaults.standard
-        let appearanceSelection = defaults.integer(forKey: "appearanceSelection")
-        
-        if appearanceSelection == 0 {
-            overrideUserInterfaceStyle = .unspecified
-        } else if appearanceSelection == 1 {
-            overrideUserInterfaceStyle = .light
-        } else {
-            overrideUserInterfaceStyle = .dark
-        }
+        portraitImageView.layer.cornerRadius = 6
+        tableView.isScrollEnabled = !deviceHasLargeScreen
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -46,16 +44,19 @@ class AboutTableViewController: UITableViewController, SFSafariViewControllerDel
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
-        case [1,0]: launchYoutube()
-        case [1,1]: launchTwitter()
-        case [2,0]: launchSPMRepo()
-        case [2,1]: launchIconLink()
-        default: print("no action triggered")
+        case [1,0]: launchLink(urlString: youtubeURLString)
+        case [1,1]: launchLink(urlString: twitterURLString)
+        case [2,0]: print("launching tip jar")
+        case [2,1]: launchReview()
+        case [3,0]: launchLink(urlString: neumorphicViewURLString)
+        case [3,1]: launchLink(urlString: swiftyStoreKitURLString)
+        case [3,2]: launchLink(urlString: iconURLString)
+        default: print("no action triggered for index path \(indexPath)")
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func launchYoutube() {
-        let urlString = "https://www.youtube.com/channel/UCpClazC2qqYfAO48NdnBeuQ"
+    func launchLink(urlString: String) {
         
         if let url = URL(string: urlString) {
             let vc = SFSafariViewController(url: url)
@@ -65,37 +66,11 @@ class AboutTableViewController: UITableViewController, SFSafariViewControllerDel
         }
     }
     
-    func launchTwitter() {
-        let urlString = "https://twitter.com/davejacobseniOS"
+    func launchReview() {
         
-        if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url)
-            vc.delegate = self
-            
-            present(vc, animated: true)
-        }
-    }
-    
-    func launchSPMRepo() {
-        let urlString = "https://github.com/hirokimu/EMTNeumorphicView"
-        
-        if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url)
-            vc.delegate = self
-            
-            present(vc, animated: true)
-        }
-    }
-    
-    func launchIconLink() {
-        let urlString = "https://www.flaticon.com/free-icon/tap_929720?k=1610381162362"
-        
-        if let url = URL(string: urlString) {
-            let vc = SFSafariViewController(url: url)
-            vc.delegate = self
-            
-            present(vc, animated: true)
-        }
+        guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1523772947?action=write-review")
+        else { fatalError("Expected a valid URL") }
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
     }
     
 }
