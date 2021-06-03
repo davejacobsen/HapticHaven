@@ -32,7 +32,61 @@
 		D5B6BE85249506CB00D02B74 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */; };
 		D5E4E36325AD46B300CB5FE3 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */; };
 		D5E4E36825AE37DE00CB5FE3 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4E36725AE37DE00CB5FE3 /* UIDeviceExtension.swift */; };
+		FC68FA76261A2C0E005F4CFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC68FA75261A2C0E005F4CFB /* Assets.xcassets */; };
+		FC68FA7D261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC68FA7C261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC68FA82261A2C0F005F4CFB /* Haptic_HavenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FA81261A2C0F005F4CFB /* Haptic_HavenApp.swift */; };
+		FC68FA84261A2C0F005F4CFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FA83261A2C0F005F4CFB /* ContentView.swift */; };
+		FC68FA86261A2C0F005F4CFB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FA85261A2C0F005F4CFB /* NotificationController.swift */; };
+		FC68FA88261A2C0F005F4CFB /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FA87261A2C0F005F4CFB /* NotificationView.swift */; };
+		FC68FA8A261A2C0F005F4CFB /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FA89261A2C0F005F4CFB /* ComplicationController.swift */; };
+		FC68FA8C261A2C0F005F4CFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC68FA8B261A2C0F005F4CFB /* Assets.xcassets */; };
+		FC68FA8F261A2C0F005F4CFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC68FA8E261A2C0F005F4CFB /* Preview Assets.xcassets */; };
+		FC68FA94261A2C0F005F4CFB /* Haptic Haven Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC68FA73261A2C0C005F4CFB /* Haptic Haven Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC68FAB0261A2E66005F4CFB /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FAAF261A2E66005F4CFB /* Haptic.swift */; };
+		FC68FAB8261A2E93005F4CFB /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68FAB7261A2E93005F4CFB /* HapticController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC68FA7E261A2C0F005F4CFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5285AAE2491832C006FB60A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC68FA7B261A2C0F005F4CFB;
+			remoteInfo = "Haptic Haven Watch Extension";
+		};
+		FC68FA92261A2C0F005F4CFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5285AAE2491832C006FB60A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC68FA72261A2C0C005F4CFB;
+			remoteInfo = "Haptic Haven Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC68FA95261A2C0F005F4CFB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FC68FA94261A2C0F005F4CFB /* Haptic Haven Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC68FA98261A2C0F005F4CFB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC68FA7D261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D507ACB625A405900064861D /* IconTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +115,21 @@
 		D5B6BE84249506CB00D02B74 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D5E4E36225AD46B300CB5FE3 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		D5E4E36725AE37DE00CB5FE3 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		FC68FA73261A2C0C005F4CFB /* Haptic Haven Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Haven Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC68FA75261A2C0E005F4CFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC68FA77261A2C0E005F4CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC68FA7C261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Haptic Haven Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC68FA81261A2C0F005F4CFB /* Haptic_HavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic_HavenApp.swift; sourceTree = "<group>"; };
+		FC68FA83261A2C0F005F4CFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC68FA85261A2C0F005F4CFB /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FC68FA87261A2C0F005F4CFB /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FC68FA89261A2C0F005F4CFB /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FC68FA8B261A2C0F005F4CFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC68FA8E261A2C0F005F4CFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC68FA90261A2C0F005F4CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC68FA91261A2C0F005F4CFB /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FC68FAAF261A2E66005F4CFB /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		FC68FAB7261A2E93005F4CFB /* HapticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +140,13 @@
 				D58AA9F9264700AB00146943 /* SwiftyStoreKit in Frameworks */,
 				D54A37D424BD62A20046FECB /* EMTNeumorphicView in Frameworks */,
 				D531791625DF1DFD00FEF0B7 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC68FA79261A2C0F005F4CFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				D5285AB82491832C006FB60A /* Haptic Haven */,
+				FC68FA74261A2C0C005F4CFB /* Haptic Haven Watch */,
+				FC68FA80261A2C0F005F4CFB /* Haptic Haven Watch Extension */,
 				D5285AB72491832C006FB60A /* Products */,
 				D531791425DF1DFC00FEF0B7 /* Frameworks */,
 			);
@@ -102,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				D5285AB62491832C006FB60A /* Haptic Haven.app */,
+				FC68FA73261A2C0C005F4CFB /* Haptic Haven Watch.app */,
+				FC68FA7C261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +277,73 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
+		FC68FA74261A2C0C005F4CFB /* Haptic Haven Watch */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FA75261A2C0E005F4CFB /* Assets.xcassets */,
+				FC68FA77261A2C0E005F4CFB /* Info.plist */,
+			);
+			path = "Haptic Haven Watch";
+			sourceTree = "<group>";
+		};
+		FC68FA80261A2C0F005F4CFB /* Haptic Haven Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FAAE261A2DFF005F4CFB /* Models */,
+				FC68FABC261A2E9E005F4CFB /* Model Controllers */,
+				FC68FAAA261A2DF2005F4CFB /* Views */,
+				FC68FAA0261A2CEF005F4CFB /* Resources */,
+				FC68FA90261A2C0F005F4CFB /* Info.plist */,
+				FC68FA8D261A2C0F005F4CFB /* Preview Content */,
+			);
+			path = "Haptic Haven Watch Extension";
+			sourceTree = "<group>";
+		};
+		FC68FA8D261A2C0F005F4CFB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FA8E261A2C0F005F4CFB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC68FAA0261A2CEF005F4CFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FA81261A2C0F005F4CFB /* Haptic_HavenApp.swift */,
+				FC68FA85261A2C0F005F4CFB /* NotificationController.swift */,
+				FC68FA87261A2C0F005F4CFB /* NotificationView.swift */,
+				FC68FA89261A2C0F005F4CFB /* ComplicationController.swift */,
+				FC68FA8B261A2C0F005F4CFB /* Assets.xcassets */,
+				FC68FA91261A2C0F005F4CFB /* PushNotificationPayload.apns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC68FAAA261A2DF2005F4CFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FA83261A2C0F005F4CFB /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC68FAAE261A2DFF005F4CFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FAAF261A2E66005F4CFB /* Haptic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC68FABC261A2E9E005F4CFB /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC68FAB7261A2E93005F4CFB /* HapticController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,10 +354,12 @@
 				D5285AB22491832C006FB60A /* Sources */,
 				D5285AB32491832C006FB60A /* Frameworks */,
 				D5285AB42491832C006FB60A /* Resources */,
+				FC68FA95261A2C0F005F4CFB /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC68FA93261A2C0F005F4CFB /* PBXTargetDependency */,
 			);
 			name = "Haptic Haven";
 			packageProductDependencies = (
@@ -221,18 +370,58 @@
 			productReference = D5285AB62491832C006FB60A /* Haptic Haven.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FC68FA72261A2C0C005F4CFB /* Haptic Haven Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC68FA9C261A2C0F005F4CFB /* Build configuration list for PBXNativeTarget "Haptic Haven Watch" */;
+			buildPhases = (
+				FC68FA71261A2C0C005F4CFB /* Resources */,
+				FC68FA98261A2C0F005F4CFB /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC68FA7F261A2C0F005F4CFB /* PBXTargetDependency */,
+			);
+			name = "Haptic Haven Watch";
+			productName = "Haptic Haven Watch";
+			productReference = FC68FA73261A2C0C005F4CFB /* Haptic Haven Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FC68FA7B261A2C0F005F4CFB /* Haptic Haven Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC68FA9B261A2C0F005F4CFB /* Build configuration list for PBXNativeTarget "Haptic Haven Watch Extension" */;
+			buildPhases = (
+				FC68FA78261A2C0F005F4CFB /* Sources */,
+				FC68FA79261A2C0F005F4CFB /* Frameworks */,
+				FC68FA7A261A2C0F005F4CFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Haptic Haven Watch Extension";
+			productName = "Haptic Haven Watch Extension";
+			productReference = FC68FA7C261A2C0F005F4CFB /* Haptic Haven Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D5285AAE2491832C006FB60A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = David;
 				TargetAttributes = {
 					D5285AB52491832C006FB60A = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					FC68FA72261A2C0C005F4CFB = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					FC68FA7B261A2C0F005F4CFB = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -254,6 +443,8 @@
 			projectRoot = "";
 			targets = (
 				D5285AB52491832C006FB60A /* Haptic Haven */,
+				FC68FA72261A2C0C005F4CFB /* Haptic Haven Watch */,
+				FC68FA7B261A2C0F005F4CFB /* Haptic Haven Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -271,6 +462,23 @@
 				D507ACD025A412F60064861D /* altIcon2.png in Resources */,
 				D5285AC32491832D006FB60A /* Assets.xcassets in Resources */,
 				D5285AC12491832C006FB60A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC68FA71261A2C0C005F4CFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC68FA76261A2C0E005F4CFB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC68FA7A261A2C0F005F4CFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC68FA8F261A2C0F005F4CFB /* Preview Assets.xcassets in Resources */,
+				FC68FA8C261A2C0F005F4CFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +506,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC68FA78261A2C0F005F4CFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC68FAB0261A2E66005F4CFB /* Haptic.swift in Sources */,
+				FC68FA86261A2C0F005F4CFB /* NotificationController.swift in Sources */,
+				FC68FA84261A2C0F005F4CFB /* ContentView.swift in Sources */,
+				FC68FA8A261A2C0F005F4CFB /* ComplicationController.swift in Sources */,
+				FC68FA82261A2C0F005F4CFB /* Haptic_HavenApp.swift in Sources */,
+				FC68FA88261A2C0F005F4CFB /* NotificationView.swift in Sources */,
+				FC68FAB8261A2E93005F4CFB /* HapticController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC68FA7F261A2C0F005F4CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC68FA7B261A2C0F005F4CFB /* Haptic Haven Watch Extension */;
+			targetProxy = FC68FA7E261A2C0F005F4CFB /* PBXContainerItemProxy */;
+		};
+		FC68FA93261A2C0F005F4CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC68FA72261A2C0C005F4CFB /* Haptic Haven Watch */;
+			targetProxy = FC68FA92261A2C0F005F4CFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D5285ABF2491832C006FB60A /* Main.storyboard */ = {
@@ -440,7 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U46PJ4YSS;
+				DEVELOPMENT_TEAM = C39EPG5VUE;
 				INFOPLIST_FILE = "Haptic Haven/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,7 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U46PJ4YSS;
+				DEVELOPMENT_TEAM = C39EPG5VUE;
 				INFOPLIST_FILE = "Haptic Haven/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +708,102 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC68FA96261A2C0F005F4CFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C39EPG5VUE;
+				IBSC_MODULE = Haptic_Haven_Watch_Extension;
+				INFOPLIST_FILE = "Haptic Haven Watch/Info.plist";
+				MARKETING_VERSION = 1.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		FC68FA97261A2C0F005F4CFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C39EPG5VUE;
+				IBSC_MODULE = Haptic_Haven_Watch_Extension;
+				INFOPLIST_FILE = "Haptic Haven Watch/Info.plist";
+				MARKETING_VERSION = 1.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		FC68FA99261A2C0F005F4CFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Haptic Haven Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = C39EPG5VUE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Haptic Haven Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		FC68FA9A261A2C0F005F4CFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Haptic Haven Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = C39EPG5VUE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Haptic Haven Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ddjacobsen17.Haptic-Haven.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
 			};
 			name = Release;
 		};
@@ -493,6 +824,24 @@
 			buildConfigurations = (
 				D5285ACB2491832E006FB60A /* Debug */,
 				D5285ACC2491832E006FB60A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC68FA9B261A2C0F005F4CFB /* Build configuration list for PBXNativeTarget "Haptic Haven Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC68FA99261A2C0F005F4CFB /* Debug */,
+				FC68FA9A261A2C0F005F4CFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC68FA9C261A2C0F005F4CFB /* Build configuration list for PBXNativeTarget "Haptic Haven Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC68FA96261A2C0F005F4CFB /* Debug */,
+				FC68FA97261A2C0F005F4CFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
