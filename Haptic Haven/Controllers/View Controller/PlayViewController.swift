@@ -30,13 +30,9 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = UIColor.clear
-        
-        let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(updateHapticTitles), name: Notification.Name("updateNeededForHapticTitles"), object: nil)
+         configureNavigationBar()
+         configureBackground()
+         setupNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +48,27 @@ class PlayViewController: UIViewController {
         overrideUserInterfaceStyle = HapticController.getSelectedAppearance()
         setupViews()
     }
-    
+  private func configureNavigationBar() {
+      if let navigationBar = navigationController?.navigationBar {
+          navigationBar.setBackgroundImage(UIImage(), for: .default)
+          navigationBar.shadowImage = UIImage()
+          navigationBar.isTranslucent = true
+      }
+  }
+
+  private func configureBackground() {
+      navigationController?.view.backgroundColor = .clear
+  }
+
+  private func setupNotifications() {
+      NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(updateHapticTitles),
+          name: .init("updateNeededForHapticTitles"),
+          object: nil
+      )
+  }
+
     func setupViews() {
         
         let assignedCGColor: CGColor
